@@ -1,6 +1,6 @@
 package serializer
 
-import "go-crud/model"
+import "clicli/model"
 
 // Video 用户序列化器
 type Video struct {

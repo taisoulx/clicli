@@ -1,8 +1,8 @@
 package service
 
 import (
-	"go-crud/model"
-	"go-crud/serializer"
+	"clicli/model"
+	"clicli/serializer"
 )
 
 // ShowVideoService 视频列表的服务

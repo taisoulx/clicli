@@ -1,8 +1,8 @@
 package conf
 
 import (
-	"go-crud/cache"
-	"go-crud/model"
+	"clicli/cache"
+	"clicli/model"
 	"os"
 
 	"github.com/joho/godotenv"

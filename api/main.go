@@ -3,9 +3,9 @@ package api
 import (
 	"encoding/json"
 	"fmt"
-	"go-crud/conf"
-	"go-crud/model"
-	"go-crud/serializer"
+	"clicli/conf"
+	"clicli/model"
+	"clicli/serializer"
 
 	"github.com/gin-gonic/gin"
 	validator "gopkg.in/go-playground/validator.v8"

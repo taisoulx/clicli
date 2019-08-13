@@ -1,7 +1,7 @@
 package api
 
 import (
-	"go-crud/service"
+	"clicli/service"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,8 +1,8 @@
 package service
 
 import (
-	"go-crud/model"
-	"go-crud/serializer"
+	"clicli/model"
+	"clicli/serializer"
 )
 
 // DeleteVideoService 视频删除的服务

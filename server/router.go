@@ -1,8 +1,8 @@
 package server
 
 import (
-	"go-crud/api"
-	"go-crud/middleware"
+	"clicli/api"
+	"clicli/middleware"
 	"os"
 
 	"github.com/gin-gonic/gin"

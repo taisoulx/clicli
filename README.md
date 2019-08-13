@@ -1,6 +1,6 @@
 # Golang Fast CRUD
 
-https://github.com/bydmm/go-crud
+https://github.com/bydmm/clicli
 
 ## 视频实况教程
 
@@ -64,7 +64,7 @@ GIN_MODE="debug"
 本项目使用[Go Mod](https://github.com/golang/go/wiki/Modules)管理依赖。
 
 ```shell
-go mod init go-crud
+go mod init clicli
 export GOPROXY=http://mirrors.aliyun.com/goproxy/
 go run main.go // 自动安装
 ```

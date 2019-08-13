@@ -1,8 +1,8 @@
 package main
 
 import (
-	"go-crud/conf"
-	"go-crud/server"
+	"clicli/conf"
+	"clicli/server"
 )
 
 func main() {
