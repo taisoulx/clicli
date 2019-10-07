@@ -1,11 +1,10 @@
 package api
 
 import (
+	"clicli/conf"
+	"clicli/serializer"
 	"encoding/json"
 	"fmt"
-	"clicli/conf"
-	"clicli/model"
-	"clicli/serializer"
 
 	"github.com/gin-gonic/gin"
 	validator "gopkg.in/go-playground/validator.v8"
@@ -20,11 +19,9 @@ func Ping(c *gin.Context) {
 }
 
 // CurrentUser 获取当前用户
-func CurrentUser(c *gin.Context) *model.User {
-	if user, _ := c.Get("user"); user != nil {
-		if u, ok := user.(*model.User); ok {
-			return u
-		}
+func CurrentUser(c *gin.Context) interface{} {
+	if claims, _ := c.Get("claims"); claims != nil {
+		return claims
 	}
 	return nil
 }

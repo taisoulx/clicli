@@ -13,3 +13,9 @@ type TrackedErrorResponse struct {
 	Response
 	TrackID string `json:"track_id"`
 }
+
+// TokenResponse token返回序列化
+type TokenResponse struct {
+	Response
+	Token string `json:"token"`
+}

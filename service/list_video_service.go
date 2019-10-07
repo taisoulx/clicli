@@ -5,11 +5,11 @@ import (
 	"clicli/serializer"
 )
 
-// ShowVideoService 视频列表的服务
+// ListVideoService 视频列表的服务
 type ListVideoService struct {
 }
 
-// List视频列表
+// List 视频列表
 func (service *ListVideoService) List() serializer.Response {
 	videos := []model.Video{}
 	err := model.DB.Find(&videos).Error

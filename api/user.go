@@ -30,13 +30,12 @@ func UserLogin(c *gin.Context) {
 		if user, err := service.Login(); err != nil {
 			c.JSON(200, err)
 		} else {
-			// 设置Session
-			s := sessions.Default(c)
-			s.Clear()
-			s.Set("user_id", user.ID)
-			s.Save()
+			//设置jwt
+			_, token := service.GenerateToken(user)
 
-			res := serializer.BuildUserResponse(user)
+			res := serializer.TokenResponse{
+				Token: token,
+			}
 			c.JSON(200, res)
 		}
 	} else {
@@ -46,8 +45,10 @@ func UserLogin(c *gin.Context) {
 
 // UserMe 用户详情
 func UserMe(c *gin.Context) {
-	user := CurrentUser(c)
-	res := serializer.BuildUserResponse(*user)
+	userinfo := CurrentUser(c)
+	res := serializer.Response{
+		Data: userinfo,
+	}
 	c.JSON(200, res)
 }
 

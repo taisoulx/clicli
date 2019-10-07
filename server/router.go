@@ -3,7 +3,6 @@ package server
 import (
 	"clicli/api"
 	"clicli/middleware"
-	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,9 +12,7 @@ func NewRouter() *gin.Engine {
 	r := gin.Default()
 
 	// 中间件, 顺序不能改
-	r.Use(middleware.Session(os.Getenv("SESSION_SECRET")))
 	r.Use(middleware.Cors())
-	r.Use(middleware.CurrentUser())
 
 	// 路由
 	v1 := r.Group("/api/v1")
@@ -31,11 +28,13 @@ func NewRouter() *gin.Engine {
 
 		// 需要登录保护的
 		authed := r.Group("/")
-		authed.Use(middleware.AuthRequired())
+		//JWT鉴权
+		authed.Use(middleware.JWTAuth())
 		{
 			// User Routing
 			authed.GET("user/me", api.UserMe)
 			authed.DELETE("user/logout", api.UserLogout)
+			authed.GET("ping", api.Ping)
 		}
 
 		//视频相关

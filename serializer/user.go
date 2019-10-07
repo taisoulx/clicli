@@ -36,3 +36,30 @@ func BuildUserResponse(user model.User) UserResponse {
 		Data: BuildUser(user),
 	}
 }
+
+// LoginResult 登录结果结构
+type LoginResult struct {
+	User
+	Token string `json:"token"`
+}
+
+// LoginResultResponse 登录结果序列化
+type LoginResultResponse struct {
+	Response
+	Data LoginResult `json:"data"`
+}
+
+// BuildLoginResult 序列化用户
+func BuildLoginResult(result LoginResult) LoginResult {
+	return LoginResult{
+		User:  result.User,
+		Token: result.Token,
+	}
+}
+
+// BuildLoginResultResponse 序列化用户响应
+func BuildLoginResultResponse(result LoginResult) LoginResultResponse {
+	return LoginResultResponse{
+		Data: BuildLoginResult(result),
+	}
+}
